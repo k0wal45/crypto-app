@@ -61,7 +61,7 @@ const Coin = () => {
           <title>{coin.name} - CryptoNight</title>
         </Helmet>
       {coin.image.large 
-      ? <img src={coin.image} alt={`${coin.name} Logo`} className='h-72'/>
+      ? <img src={coin.image.large} alt={`${coin.name} Logo`} className='h-72'/>
       : ''
       }
       <section className="flex flex-col gap-4 max-w-lg">
