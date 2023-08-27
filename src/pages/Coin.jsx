@@ -63,7 +63,7 @@ const Coin = () => {
       <section className="flex flex-col gap-4 max-w-lg">
         <h1 className='text-8xl font-montserrat-bold text-center lg:text-start'>{coin.name}</h1>
         <div className='flex flex-wrap gap-4 p-2 border-b-2 border-blue-700 text-center items-center justify-center lg:justify-start'>
-          <p className='text-2xl font-montserrat'>Current Price: ${coin.market_data.current_price.usd > 0 ? numberWithCommas(coin.market_data.current_price.usd.toFixed(2)) : coin.market_data.current_price.usd.toFixed(5)}</p>
+          {/* <p className='text-2xl font-montserrat'>Current Price: ${coin.market_data.current_price.usd > 0 ? numberWithCommas(coin.market_data.current_price.usd.toFixed(2)) : coin.market_data.current_price.usd.toFixed(5)}</p> */}
           <p className='text-2xl font-montserrat'>Rank: #{coin.coingecko_rank}</p>
         </div>
         <div className='flex flex-wrap gap-4 p-2 border-b-2 border-blue-700 text-center items-center justify-center lg:justify-start'>
