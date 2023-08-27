@@ -49,12 +49,6 @@ const Coin = () => {
       return <span className='text-success'>{number}</span>
     
   }
-
-  const tags = async () => {
-    return coin.description.en
-  }
-
-
   
   if(!loading) {
     return (
