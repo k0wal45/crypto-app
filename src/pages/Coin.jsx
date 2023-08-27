@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 const Coin = () => {
 
   const { id } = useParams();
-  const [coin, setCoin] = useState({});
+  const [coin, setCoin] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const url = `https://api.coingecko.com/api/v3/coins/${id}`;
@@ -31,16 +31,16 @@ const Coin = () => {
 
   useEffect(() => {
     console.log(coin)
-    if (coin !== '') {
+    if (coin) {
       setLoading(false)
     } else {
       setLoading(true)
     }
   }, [coin])
 
-  /*function numberWithCommas(x) {
+  function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }*/
+  }
 
   const plusOrMinus = (number) => {
     if (number < 0) {
@@ -49,6 +49,12 @@ const Coin = () => {
       return <span className='text-success'>{number}</span>
     
   }
+
+  const tags = async () => {
+    return coin.description.en
+  }
+
+
   
   if(!loading) {
     return (
@@ -63,7 +69,7 @@ const Coin = () => {
       <section className="flex flex-col gap-4 max-w-lg">
         <h1 className='text-8xl font-montserrat-bold text-center lg:text-start'>{coin.name}</h1>
         <div className='flex flex-wrap gap-4 p-2 border-b-2 border-blue-700 text-center items-center justify-center lg:justify-start'>
-          {/* <p className='text-2xl font-montserrat'>Current Price: ${coin.market_data.current_price.usd > 0 ? numberWithCommas(coin.market_data.current_price.usd.toFixed(2)) : coin.market_data.current_price.usd.toFixed(5)}</p> */}
+          <p className='text-2xl font-montserrat'>Current Price: ${coin.market_data.current_price.usd > 0 ? numberWithCommas(coin.market_data.current_price.usd.toFixed(2)) : coin.market_data.current_price.usd.toFixed(5)}</p>
           <p className='text-2xl font-montserrat'>Rank: #{coin.coingecko_rank}</p>
         </div>
         <div className='flex flex-wrap gap-4 p-2 border-b-2 border-blue-700 text-center items-center justify-center lg:justify-start'>
