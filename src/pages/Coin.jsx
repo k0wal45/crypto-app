@@ -38,9 +38,9 @@ const Coin = () => {
     }
   }, [coin])
 
-  function numberWithCommas(x) {
+  /*function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  }*/
 
   const plusOrMinus = (number) => {
     if (number < 0) {
