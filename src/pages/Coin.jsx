@@ -50,11 +50,6 @@ const Coin = () => {
     
   }
 
-  const tags = async () => {
-    return coin.description.en
-  }
-
-
   
   if(!loading) {
     return (
